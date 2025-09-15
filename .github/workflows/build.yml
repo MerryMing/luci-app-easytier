@@ -33,8 +33,7 @@ jobs:
           - mips_mips32
           
         sdk:
-          - 22.03.7
-          - SNAPSHOT
+          - 24.10.2
 
     steps:
       - uses: actions/checkout@v4
