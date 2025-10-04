@@ -7,11 +7,11 @@ on:
       tag:
         description: '请填写发布Releases的版本号（留空不发布）'
         required: false
-        default: '2.4.5.1'
+        default: '2.4.5.2'
       text:
         description: '请填写发布的说明'
         required: false
-        default: '2.4.5.1 arm and mips'
+        default: 'add arm64 and mipsel'
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -29,13 +29,11 @@ jobs:
       matrix:
         arch:
           - aarch64_generic
-          - mips_24kc
-          #- mips_4kec
           - mipsel_24kc
 
         sdk:
           - 24.10.3
-          - SNAPSHOT
+          - 24.10.2
 
     steps:
       - uses: actions/checkout@v4
